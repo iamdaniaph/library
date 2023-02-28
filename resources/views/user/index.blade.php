@@ -6,31 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <title>BOOKS</title>
+    <title>USERS</title>
 
 </head>
 <body>
-
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Book ID</th>
-      <th scope="col">Book Title</th>
-      <th scope="col">Total Pages</th>
-      <th scope="col">Rating</th>
-      <th scope="col">isbn</th>
-      <th scope="col">Publish Date</th>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Email Verification</th>
+      <th scope="col">Password</th>
     </tr>
   </thead>
-  @foreach ($books as $book)
+  @foreach ($users as $user)
   <tbody>  
     <tr>
-      <td>{{$book->bookid}}</td>
-      <td>{{$book->title}}</td>
-      <td>{{$book->totalPages}}</td>
-      <td>{{$book->rating}}</td>
-      <td>{{$book->isbn}}</td>
-      <td>{{$book->publishDate}}</td>
+      <td>{{$user->id}}</td>
+      <td>{{$user->name}}</td>
+      <td>{{$user->email}}</td>
+      <td>{{$user->email_verified_at}}</td>
+      <td>{{$user->password}}</td>
     </tr>
     </tbody>
     @endforeach

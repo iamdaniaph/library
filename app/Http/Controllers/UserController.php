@@ -1,16 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     //
     public function index(){
-        return 'Hello from userController';
-    }
-        
+        $data = User::all();
+        return view('user.index',['users'=>$data]);
+    }  
+    
     public function show($id){
         $data=array(
         "id"=>$id,
